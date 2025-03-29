@@ -31,8 +31,13 @@ jobs:
             echo "runner=yarn" >> $GITHUB_OUTPUT
             exit 0
           elif [ -f "${{ github.workspace }}/web/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
+            if [ -f "${{ github.workspace }}/web/package-lock.json" ]; then
+              echo "manager=npm" >> $GITHUB_OUTPUT
+              echo "command=ci" >> $GITHUB_OUTPUT
+            else
+              echo "manager=npm" >> $GITHUB_OUTPUT
+              echo "command=install" >> $GITHUB_OUTPUT
+            fi
             echo "runner=npx --no-install" >> $GITHUB_OUTPUT
             exit 0
           else
