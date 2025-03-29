@@ -1,4 +1,4 @@
-# OpenThaiSOS
+# OpenThaiSOS (Now This is Proof of concept only)
 OpenThaiSOS is an open source that can send SOS signals to communication devices by specific area.
 
  - [RestAPI (https://api.openthaisos.org/)](https://api.openthaisos.org/)
